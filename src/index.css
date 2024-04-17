@@ -24,3 +24,14 @@ body {
 .mx-w {
 	@apply px-5 lg:max-w-5xl lg:mx-auto xl:max-w-6xl 2xl:px-0;
 }
+.hero {
+	background-color: hsl(255, 27%, 26%);
+	height: 17rem;
+}
+.hero img {
+	height: 17rem;
+	@apply w-full;
+}
+.btn-cyan {
+	@apply bg-cyan-500 text-white py-2 px-4 hover:opacity-80 transition-all duration-100 cursor-pointer;
+}

@@ -29,7 +29,7 @@ function Header() {
 						<button href=''>Login</button>
 					</li>
 					<li>
-						<button className='btn-cta'>Sign Up</button>
+						<button className='btn-cyan rounded-full'>Sign Up</button>
 					</li>
 				</ul>
 			</header>
