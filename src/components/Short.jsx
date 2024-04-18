@@ -2,18 +2,10 @@ import React, { useState } from 'react'
 import desktopBackground from '../images/bg-shorten-desktop.svg'
 import mobileBackground from '../images/bg-shorten-mobile.svg'
 
-const getLocalStorage = () => {
-  let links = localStorage.getItem("links")
-  if (links) {
-    return JSON.parse(localStorage.getItem("links"))
-  } else {
-    return []
-  }
-}
 
 function Short() {
   const [text, setText] = useState('')
-  const [links, setLinks] = useState([])
+  const [buttonText, setButtonText] = useState("Copy")
 
   const handleSubmit = async (e) => {
   e.preventDefault()
@@ -44,10 +36,17 @@ setText(data.result_url)
   }
 }
   const handleCopy = () => {
-    navigator.clipboard.writeText(text)
-      .then(() => alert('Copied to clipboard!'))
-      .catch(err => console.error('Failed to copy text: ', err));
-  }
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      alert('Copied to clipboard!');
+      setButtonText('Copied!');
+      setTimeout(() => setButtonText("Copy"), 2000);
+    })
+    .catch(err => {
+      console.error('Failed to copy text: ', err);
+      alert('Failed to copy text: ' + err.message);
+    });
+}
 
   return (
     <>
@@ -63,13 +62,15 @@ setText(data.result_url)
             <button type='submit' className='btn-cyan rounded-lg w-full md:w-40 md:ml-5 mb-2'onClick={handleSubmit}>Shorten It!</button>
           </div>
         </form>
-        <div className='flex flex-col items-center justify-center bg-white text-center md:flex-row md:justify-between'>
+        <div className='flex flex-col items-center justify-center bg-white text-center md:flex-row md:justify-between mt-3 mb-3'>
           <article>
-            <h5 className='mb-3 md:mb-0'>{text}</h5>
+            <h5 className='mb-3 md:mb-0 md:items-center'>{text}</h5>
           </article>
           <article>
             <ul className='md:flex'>
-              <li><button className='btn-cyan rounded-lg text-sm' onClick={handleCopy}>Copy</button></li>
+              <li>
+                <button className='btn-cyan rounded-lg text-sm focus:bg-slate-800 mb-3"' onClick={handleCopy}>{buttonText}</button>
+                </li>
             </ul>
           </article>
         </div>
