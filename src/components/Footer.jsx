@@ -1,9 +1,9 @@
-import React from 'react'
-import facebook from '../images/icon-facebook.svg'
-import twitter from '../images/icon-twitter.svg'
-import pinterest from '../images/icon-pinterest.svg'
-import instagram from '../images/icon-instagram.svg'
-import logo from '../images/logo2.svg'
+import React from 'react';
+import facebook from '../images/icon-facebook.svg';
+import twitter from '../images/icon-twitter.svg';
+import pinterest from '../images/icon-pinterest.svg';
+import instagram from '../images/icon-instagram.svg';
+import logo from '../images/logo2.svg';
 
 function Footer() {
   return (
@@ -24,7 +24,7 @@ function Footer() {
             <li>
               <a className="text-slate-200 text-sm mt-1" href='#'>Analytics</a>
             </li>
-            </ul>
+          </ul>
         </article>
         <article>
           <h3 className='text-white text-lg font-bold tracking-wide'>Resources</h3>
@@ -38,13 +38,13 @@ function Footer() {
             <li>
               <a className="text-slate-200 text-sm mt-1" href='#'>Support</a>
             </li>
-            </ul>
+          </ul>
         </article>
         <article>
           <h3 className='text-white text-lg font-bold tracking-wide'>Company</h3>
           <ul>
             <li>
-              <a className="text-slate-200 text-sm mt-1"  href='#'>About</a>
+              <a className="text-slate-200 text-sm mt-1" href='#'>About</a>
             </li>
             <li>
               <a className="text-slate-200 text-sm mt-1" href='#'>Our Team</a>
@@ -55,7 +55,7 @@ function Footer() {
             <li>
               <a className="text-slate-200 text-sm mt-1" href='#'>Contact</a>
             </li>
-            </ul>
+          </ul>
         </article>
         <article>
           <ul className='flex items-center'>
@@ -73,11 +73,9 @@ function Footer() {
             </li>
           </ul>
         </article>
-        
-        </div>  
-
+      </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
